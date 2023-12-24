@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+       .message {
+      font-size: 24px;
+      text-align: center;
+       }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    button {
+      padding: 15px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+
+    #simButton {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    #naoButton {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    #naoButton:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+  <title>Sim ou Não</title>
+</head>
+<body>
+
+    <div class="message">Me dá um mamamda &#x1F633 &#x1F449 &#x1F448??</div>
+  
+
+<button id="simButton" onclick="alert('Resposta certa')">Sim</button>
+<button id="naoButton" onclick="moveNaoButton()">Não</button>
+
+<script>
+  function moveNaoButton() {
+    // Gera uma posição aleatória para o botão "Não"
+    const maxX = window.innerWidth - 100; // Largura máxima da tela
+    const maxY = window.innerHeight - 50; // Altura máxima da tela
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    // Define a nova posição do botão "Não"
+    document.getElementById('naoButton').style.position = 'absolute';
+    document.getElementById('naoButton').style.left = `${randomX}px`;
+    document.getElementById('naoButton').style.top = `${randomY}px`;
+  }
+</script>
+
+</body>
+</html>
